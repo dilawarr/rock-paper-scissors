@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     return Math.floor((Math.random() * 3) + 1)
 }
@@ -6,39 +9,39 @@ console.log(getComputerChoice());
 
 function getHumanChoice() {
 
-    let invalid_input = 1;
-    let human_choice = 0;
-    while(invalid_input) {
+    let invalidInput = 1;
+    let humanChoice = 0;
+    while(invalidInput) {
 
-        human_choice = prompt("Submit your choice:\nSample valid choice: 'Rock', 'rock', 'ROCK', '1', 'R', 'r', etc.\n\n1. Rock\n2. Paper\n3. Scissors");
-        let numeric_value = Number(human_choice);
+        humanChoice = prompt("Submit your choice:\nSample valid choice: 'Rock', 'rock', 'ROCK', '1', 'R', 'r', etc.\n\n1. Rock\n2. Paper\n3. Scissors");
+        let numeric_value = Number(humanChoice);
         if(numeric_value >= 1 && numeric_value <= 3) {
             console.log("number");
-            human_choice = numeric_value;
-            invalid_input = 0;
+            humanChoice = numeric_value;
+            invalidInput = 0;
         }
         else {
-            human_choice = human_choice.toLowerCase();
-            human_choice = human_choice.trim();
+            humanChoice = humanChoice.toLowerCase();
+            humanChoice = humanChoice.trim();
             console.log("string");
-            if(human_choice === "r" || human_choice === "rock") {
-                human_choice = 1;
-                invalid_input = 0;
+            if(humanChoice === "r" || humanChoice === "rock") {
+                humanChoice = 1;
+                invalidInput = 0;
             }
-            else if(human_choice === "p"|| human_choice === "paper") {
-                human_choice = 2;
-                invalid_input = 0;
+            else if(humanChoice === "p"|| humanChoice === "paper") {
+                humanChoice = 2;
+                invalidInput = 0;
             }
-            else if(human_choice === "s"|| human_choice === "scissors") {
-                human_choice = 3;
-                invalid_input = 0;
+            else if(humanChoice === "s"|| humanChoice === "scissors") {
+                humanChoice = 3;
+                invalidInput = 0;
             }
             else {
                 console.log("Invalid Input");
             }
         }
     }
-    return human_choice
+    return humanChoice
 }
 
 console.log(getHumanChoice());
